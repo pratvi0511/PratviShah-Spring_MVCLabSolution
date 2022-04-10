@@ -35,7 +35,6 @@ public class StudentServiceImpl implements StudentService {
 	
 	@Transactional
 	public List<Student> findAll() {
-		// TODO Auto-generated method stub
 		Transaction tx = session.beginTransaction();
 		
 		List<Student> students = session.createQuery("from Student").list();
@@ -47,7 +46,6 @@ public class StudentServiceImpl implements StudentService {
 
 	@Transactional
 	public Student findById(int id) {
-		// TODO Auto-generated method stub
 		Transaction tx = session.beginTransaction();
 		
 		Student student = session.get(Student.class, id);
@@ -58,7 +56,6 @@ public class StudentServiceImpl implements StudentService {
 
 	@Transactional
 	public void save(Student student) {
-		// TODO Auto-generated method stub
 		Transaction tx = session.beginTransaction();
 		
 		session.saveOrUpdate(student);
@@ -68,7 +65,6 @@ public class StudentServiceImpl implements StudentService {
 
 	@Transactional
 	public void deleteById(int id) {
-		// TODO Auto-generated method stub
 		Transaction tx = session.beginTransaction();
 		
 		 Student student  = session.get(Student.class, id);
@@ -77,5 +73,4 @@ public class StudentServiceImpl implements StudentService {
 		
 		tx.commit();
 	}
-
 }
